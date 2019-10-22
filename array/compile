@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-test -z "$CC" && CXX=g++
+test -z "$CXX" && CXX=g++
 set -eux
 
 #############################################
