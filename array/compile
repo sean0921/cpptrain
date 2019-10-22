@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+test -z "$CC" && CXX=g++
+set -eux
+
+#############################################
+
+"$CXX" -o 00 00-initial.cpp
