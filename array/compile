@@ -19,8 +19,22 @@ function clean_object() {
     exit 0
 }
 
+function help_message() {
+    printf "
+./compile: Simple Compile Bash Script
+
+help: show this message
+clean: clean binary files
+<program_name>: compile <program_name>.cpp
+
+"
+    exit 0
+}
+
+test $1 = "help"  && help_message
+test $1 = "--help"  && help_message
 test $1 = "clean" && clean_object
-test -z $1 || compile_one
+test -z $1 || compile_one $1
 
 #############################################
 
