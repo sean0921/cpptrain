@@ -24,6 +24,7 @@ function help_message() {
 ./compile: Simple Compile Bash Script
 
 help: show this message
+all: compile all programs
 clean: clean binary files
 <program_name>: compile <program_name>.cpp
 
