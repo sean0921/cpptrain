@@ -1,8 +1,31 @@
 #!/usr/bin/env bash
 
 test -z "$CXX" && CXX=g++
-set -eux
+
+SRC=(
+    00-initial
+    00-2-fruitfav
+)
+
+function compile_one() {
+    set -eux
+    "$CXX" -o $1 $1.cpp
+    exit 0
+}
+
+function clean_object() {
+    set -eux
+    rm -f ${SRC[@]} *.o
+    exit 0
+}
+
+test $1 = "clean" && clean_object
+test -z $1 || compile_one
 
 #############################################
 
-"$CXX" -o 00 00-initial.cpp
+set -eux
+for i in ${SRC[@]}
+do 
+    "$CXX" -o "$i" "$i".cpp
+done
