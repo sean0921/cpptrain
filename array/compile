@@ -31,15 +31,18 @@ clean: clean binary files
     exit 0
 }
 
-test $1 = "help"  && help_message
+function compile_all() {
+    set -eux
+    for i in ${SRC[@]}
+    do
+        "$CXX" -o "$i" "$i".cpp
+    done
+    exit 0
+}
+
+test -z $1          && help_message
+test $1 = "help"    && help_message
 test $1 = "--help"  && help_message
-test $1 = "clean" && clean_object
-test -z $1 || compile_one $1
-
-#############################################
-
-set -eux
-for i in ${SRC[@]}
-do 
-    "$CXX" -o "$i" "$i".cpp
-done
+test $1 = "clean"   && clean_object
+test $1 = "all"     && compile_all
+compile_one $1
