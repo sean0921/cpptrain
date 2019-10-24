@@ -3,7 +3,7 @@
 test -z "$CXX" && CXX=g++
 
 SRC=(
-    00-initial
+    00-1-initial
     00-2-fruitfav
 )
 
