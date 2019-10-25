@@ -1,3 +1,5 @@
+clean
+
 *.o
 *.exe
 a.out
