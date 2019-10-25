@@ -28,6 +28,8 @@ all: compile all programs
 clean: clean binary files
 <program_name>: compile <program_name>.cpp
 
+Note. You can use \`CXX=clang++ ./compile all\` to set your custom compiler to clang++
+
 "
     exit 0
 }
