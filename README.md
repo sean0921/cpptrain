@@ -20,7 +20,9 @@ all: compile all programs
 clean: clean binary files
 <program_name>: compile <program_name>.cpp
 
-Note. You can use `CXX=clang++ ./compile all` to set your custom compiler to clang++
+Note.
+1. You can specific custom compiler with CXX variable
+2. You can compile static linked program by set variable STATIC=1
 ```
 
 * 腳本部份授權: [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
