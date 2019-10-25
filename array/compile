@@ -45,6 +45,7 @@ function compile_all() {
 }
 
 test $0 = "$(dirname $0)/clean" && clean_object
+test -z $1          && help_message
 test $1 = "all"     && compile_all
 test $1 = "clean"   && clean_object
 test $1 = "help"    && help_message
