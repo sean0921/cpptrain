@@ -1,7 +1,9 @@
 *.o
+a.out
 00-1-initial
 00-2-fruitfav
 01-1-score
 01-2-sale
 02-1-sizeof
 03-1-bubblesort
+03-2-bubblesort

@@ -9,6 +9,7 @@ SRC=(
     01-2-sale
     02-1-sizeof
     03-1-bubblesort
+    03-2-bubblesort
 )
 
 CFLAGS=(
