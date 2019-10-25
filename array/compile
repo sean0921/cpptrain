@@ -26,7 +26,7 @@ function compile_one() {
 
 function clean_object() {
     set -eux
-    cd "$(dirname "$0")" && rm -f "${SRC[@]}" ./*.o
+    cd "$(dirname "$0")" && rm -f "${SRC[@]}" ./*.o ./*.exe
     exit 0
 }
 
