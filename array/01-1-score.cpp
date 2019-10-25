@@ -16,5 +16,8 @@ int main(void) {
 
     ave = sum/n;
     cout << "全隊總成績為：" << sum << " 分，平均為" << ave << " 分 \n";
+#ifdef _WIN32
+    system("pause");
+#endif
     return 0;
 }
