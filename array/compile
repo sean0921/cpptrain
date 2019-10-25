@@ -5,6 +5,7 @@ test -z "$CXX" && CXX=g++
 SRC=(
     00-1-initial
     00-2-fruitfav
+    01-1-score
 )
 
 function compile_one() {
