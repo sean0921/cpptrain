@@ -44,9 +44,11 @@ function compile_all() {
 }
 
 test $0 = "$(dirname $0)/clean" && clean_object
-test -z $1          && help_message
-test $1 = "help"    && help_message
-test $1 = "--help"  && help_message
-test $1 = "clean"   && clean_object
 test $1 = "all"     && compile_all
-compile_one $1
+test $1 = "clean"   && clean_object
+test $1 = "help"    && help_message
+for i in ${SRC[@]}
+do
+    test $1 = $i && compile_one $1
+done
+help_message
