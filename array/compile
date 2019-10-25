@@ -6,17 +6,22 @@ SRC=(
     00-1-initial
     00-2-fruitfav
     01-1-score
+    01-2-sale
+)
+
+CFLAG=(
+    -ggdb
 )
 
 function compile_one() {
     set -eux
-    "$CXX" -o $1 $1.cpp
+    "$CXX" -o "$(dirname "$0")"/"$1" "${CFLAG[@]}" "$(dirname "$0")"/"$1".cpp
     exit 0
 }
 
 function clean_object() {
     set -eux
-    rm -f ${SRC[@]} *.o
+    cd "$(dirname "$0")" && rm -f "${SRC[@]}" ./*.o
     exit 0
 }
 
@@ -37,20 +42,20 @@ Note. You can use \`CXX=clang++ ./compile all\` to set your custom compiler to c
 
 function compile_all() {
     set -eux
-    for i in ${SRC[@]}
+    for i in "${SRC[@]}"
     do
-        "$CXX" -o "$i" "$i".cpp
+        "$CXX" -o "$(dirname "$0")"/"$i" "${CFLAG[@]}" "$(dirname "$0")"/"$i".cpp
     done
     exit 0
 }
 
-test $0 = "$(dirname $0)/clean" && clean_object
-test -z $1          && help_message
-test $1 = "all"     && compile_all
-test $1 = "clean"   && clean_object
-test $1 = "help"    && help_message
-for i in ${SRC[@]}
+test "$0" = "$(dirname "$0")/clean" && clean_object
+test -z "$1"          && help_message
+test "$1" = "all"     && compile_all
+test "$1" = "clean"   && clean_object
+test "$1" = "help"    && help_message
+for i in "${SRC[@]}"
 do
-    test $1 = $i && compile_one $1
+    test "$1" = "$i" && compile_one "$1"
 done
 help_message
