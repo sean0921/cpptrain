@@ -4,16 +4,16 @@ using namespace std;
 int main(void) {
 
     int n;
-    cout << "請輸入要排序的數值個數：";
+    cout << "How many numbers you want to sort: ";
     cin >> n;
     float array[n], temp_variable;
 
     for (int i=0; i<n; i=i+1) {
-        cout << "請輸入第 " << i+1 << " 個數值：";
+        cout << "No. " << i+1 << ": ";
         cin >> array[i];
     }
     
-    cout << "排序前：\n";
+    cout << "Before sort: \n";
     for (int i=0; i<n; i=i+1) {
         cout << array[i] << " ";
     }
@@ -29,7 +29,7 @@ int main(void) {
         }
     }
     cout << "\n";
-    cout << "由小到大排序後：\n";
+    cout << "Sorted from small to large: \n";
 
     for (int i=0; i<n; i=i+1) {
         cout << array[i] << " ";

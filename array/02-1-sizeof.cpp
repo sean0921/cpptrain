@@ -8,9 +8,9 @@ int main(void) {
     int b = sizeof(n[0]);
     int c = a/b;
 
-    cout << "array 總記憶體空間的大小: " << a << " bytes\n";
-    cout << "每個陣列元素記憶體空間的大小: " << b << " bytes\n";
-    cout << "array 元素個數: " << c << "\n\n";
+    cout << "Total memory space of array:  " << a << " bytes\n";
+    cout << "Each memory space of array: " << b << " bytes\n";
+    cout << "How many elements in an array: " << c << "\n\n";
     for (int i=0;i<c;i++) {
         cout << "n[" << i << "]=" << n[i] << "\n";
     }

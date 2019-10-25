@@ -6,7 +6,7 @@ int main(void) {
     int score[n];
     double sum=0, ave=0;
     for(int i=0; i<n; i=i+1) {
-        cout << "請輸入第 " << i+1 << " 位選手的成績：";
+        cout << "Score of No." << i+1 << " :";
         cin >> score[i];
     }
 
@@ -15,7 +15,7 @@ int main(void) {
     }
 
     ave = sum/n;
-    cout << "全隊總成績為：" << sum << " 分，平均為" << ave << " 分 \n";
+    cout << "Total score is: " << sum << ".  Average score is: " << ave << "\n";
 #ifdef _WIN32
     system("pause");
 #endif
