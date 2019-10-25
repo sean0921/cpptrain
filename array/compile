@@ -7,15 +7,16 @@ SRC=(
     00-2-fruitfav
     01-1-score
     01-2-sale
+    02-1-sizeof
 )
 
-CFLAG=(
+CFLAGS=(
     -ggdb
 )
 
 function compile_one() {
     set -eux
-    "$CXX" -o "$(dirname "$0")"/"$1" "${CFLAG[@]}" "$(dirname "$0")"/"$1".cpp
+    "$CXX" -o "$(dirname "$0")"/"$1" "${CFLAGS[@]}" "$(dirname "$0")"/"$1".cpp
     exit 0
 }
 
@@ -44,7 +45,7 @@ function compile_all() {
     set -eux
     for i in "${SRC[@]}"
     do
-        "$CXX" -o "$(dirname "$0")"/"$i" "${CFLAG[@]}" "$(dirname "$0")"/"$i".cpp
+        "$CXX" -o "$(dirname "$0")"/"$i" "${CFLAGS[@]}" "$(dirname "$0")"/"$i".cpp
     done
     exit 0
 }
