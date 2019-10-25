@@ -2,11 +2,13 @@
 
 cpp 火車
 
-## Compile script: use bash instead of Makefile
+## 編譯腳本: 故意不用 Makefile 而用 Bash Script
 
-* aim: practice bash shell scripting skill
+* 目的: 
+  - 好玩
+  - 練習 Bash Script，增加 Bash Scripting 實作經驗
 
-* script usage:
+* 腳本用法:
 
 ```
 $ ./compile
@@ -21,4 +23,4 @@ clean: clean binary files
 Note. You can use `CXX=clang++ ./compile all` to set your custom compiler to clang++
 ```
 
-* LICENSE of script: [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
+* 腳本部份授權: [BSD-2-Clause](https://opensource.org/licenses/BSD-2-Clause)
